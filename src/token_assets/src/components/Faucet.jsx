@@ -22,9 +22,9 @@ function Faucet() {
         identity,
       },
     });
-    console.log(toString(identity));
+    console.log(identity._principal.toString());
 
-    const reply = await token.payOut();
+    const reply = await authenticatedCanister.payOut();
     setShow(reply);
 
   }

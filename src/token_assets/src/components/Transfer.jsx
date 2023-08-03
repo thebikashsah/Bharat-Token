@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Principal } from "@dfinity/principal"
-import { token }   from "../../../declarations/token"
+import { token, canisterId, createActor }   from "../../../declarations/token"
  
 
 
@@ -14,7 +14,15 @@ const [buttonValue, setButton] = useState("Transfer")
   
   async function handleClick() {
       setDisabled(true);
-      const reply = await token.transfer(Principal.fromText(toValue),Number(Amount));
+      const auth = await AuthClient.create();
+    authentication(auth);
+    const identity = await auth.getIdentity();
+    const authenticatedCanister = createActor(canisterId, { 
+      agentOptions: {
+        identity,
+      },
+    });
+      const reply = await authenticatedCanister.transfer(Principal.fromText(toValue),Number(Amount));
       setButton(reply);
       setDisabled(false);
   }

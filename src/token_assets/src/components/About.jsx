@@ -18,11 +18,18 @@ function About() {
                     </div>  
                     <hr />
                     <div class="about__container bd-grid">
+                    
                         <h2 class="about__subtitle">Who is the Founder of Bharat Token?</h2>
+                        <div class="about__img">
+                        <img src="Founder.jpg" alt="Founder"/>
+                        <hr/>
                         <p class="about__text">
-                            Founder of Bharat Token is Bikash Sah.
-                            A Final Year CS Undergrad at <a> Jadavpur University.</a>
-                        </p>           
+                            Founder of Bharat Token is <a href="https://www.linkedin.com/in/bikash-sah-7222951b8/"  target="_blank"> Bikash Sah. </a>
+                            A Final Year CS Undergrad at <a href="https://jadavpuruniversity.in/"  target="_blank"> Jadavpur University.</a>
+                        </p> 
+                    </div>
+                        
+                                  
                     </div>  
                     <hr />
                     <div class="about__container bd-grid">

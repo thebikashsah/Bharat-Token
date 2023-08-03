@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter , Link, Switch, Route} from "react-router-dom";
 
 import Faucet from "./Faucet";
@@ -8,7 +8,11 @@ import Home from "./Home";
 import About from "./About";
 import ContactForm from "./Contact";
 
+
 function Header() {
+    
+
+
   return (
     // <header>
     //   <div className="blue window" id="logo">
@@ -21,7 +25,9 @@ function Header() {
     //   </div>
     // </header>
     <BrowserRouter>
+   
     <header class="l-header">
+    
             <nav class="nav bd-grid">
             <Link to="/">
                 <div>
@@ -31,30 +37,31 @@ function Header() {
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
                         <Link to="/">
-                        <li class="nav__item"> <a class="nav__link active"> Home</a></li>
+                        <li class="nav__item"> <a className="nav__link active"> Home</a></li>
                         </Link>
                         
                        
 
                         <Link to="/about">
-                        <li class="nav__item"><a class="nav__link">About</a></li>
+                        <li class="nav__item"><a className="nav__link">About</a></li>
                         </Link>
 
                         <Link to="/claim">
-                        <li class="nav__item"><a class="nav__link">Claim Free Token</a></li>
+                        <li class="nav__item"><a className="nav__link">Claim Free Token</a></li>
                         </Link>
 
                         <Link to="/check">
-                        <li class="nav__item"><a  class="nav__link">Check Balance</a></li>
+                        <li class="nav__item"><a  className="nav__link">Check Balance</a></li>
                         </Link>
 
                         <Link to="/transfer">
-                        <li class="nav__item"><a  class="nav__link">Transfer Token</a></li>
+                        <li class="nav__item"><a  className="nav__link">Transfer Token</a></li>
                         </Link>
 
                         <Link to="/contact">
-                        <li class="nav__item"><a class="nav__link">Contact</a></li>
+                        <li class="nav__item"><a className="nav__link">Contact</a></li>
                         </Link>
+                       
                     </ul>
                 </div>
 
@@ -62,6 +69,8 @@ function Header() {
                     <i class='bx bx-menu'></i>
                 </div>
             </nav>
+            
+            
         </header>
 
         <Switch>
@@ -71,7 +80,7 @@ function Header() {
 
             </Route>
 
-            <Route path="/about">
+            <Route exact path="/about">
                 <About/>
 
             </Route>
@@ -102,6 +111,7 @@ function Header() {
 
           </Switch>
         </BrowserRouter>
+        
   );
 }
 
