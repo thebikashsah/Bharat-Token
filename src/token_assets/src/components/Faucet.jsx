@@ -25,6 +25,7 @@ function Faucet() {
     console.log(identity._principal.toString());
 
     const reply = await authenticatedCanister.payOut();
+    console.log(reply);
     setShow(reply);
 
   }

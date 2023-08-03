@@ -1,85 +1,48 @@
-# Check your Balance
-
-1. Find out your principal id:
-
-```
-dfx identity get-principal
-```
-
-2. Save it somewhere.
-
-e.g. My principal id is: texpv-k6fxn-cohma-wqsul-kfs2c-bpgto-v3o4b-vr3ve-4oiaf-lnn4c-6ae
 
 
-3. Format and store it in a command line variable:
-```
-OWNER_PUBLIC_KEY="principal \"$( \dfx identity get-principal )\""
-```
+Bharat Token.
 
-4. Check that step 3 worked by printing it out:
-```
-echo $OWNER_PUBLIC_KEY
-```
+It is a Cryptocurrency  built on ICP Blockchain with Motoko Backend.
 
-5. Check the owner's balance:
-```
-dfx canister call token balanceOf "( $OWNER_PUBLIC_KEY )"
-```
+I have build a website where you can claim free BharatToken, Check Your Balance and Transfer Token to Any Account.
 
-# Charge the Canister
+Link: https://sgenc-laaaa-aaaal-qcbea-cai.icp0.io/ 
+
+Authentication is done by Internet Identity used by ICP, which is a anonymous authentication technique that uses the concept of Digital Signaturs which use Public-Private Key encryption.
 
 
-1. Check canister ID:
-```
-dfx canister id token
-```
 
-2. Save canister ID into a command line variable:
-```
-CANISTER_PUBLIC_KEY="principal  2vxsx-fae"
-```
+There can be many reason why people create Tokens?
 
-3. Check canister ID has been successfully saved:
-```
-echo $CANISTER_PUBLIC_KEY
-```
+First of all there is a difference between Crypto Token and Crypto Coin.
 
-4. Transfer half a billion tokens to the canister Principal ID:
-```
-dfx canister call token transfer "($CANISTER_PUBLIC_KEY, 500)"
-```
+Crypto Coin have there own Blockchain but Crypto Token is built on existing Blockchain.
 
-# Deploy the Project to the Live IC Network
+Crypto Tokens in Web 3 world can be used to fund a Web 3 Startup, where you can launch ICO for your startup and people can buy the tokens to support your Startup, it the Startup does well then the price of token appreciates.
 
-1. Create and deploy canisters:
+My Motivation is different, when I was in 1st Year of my college I was obssessed with Money and how it works, and I saw a documentary about 2008 Crisis on how this powerfull banks have control over the monetary system and credit, which can be solved by a decentralised currency like Bitcoin, BharatToken etc.
 
-```
-dfx deploy --network ic
-```
+I am in tech, so I tried to make my own Crypto Token on Blockchain.
 
-2. Check the live canister ID:
-```
-dfx canister --network ic id token
-```
 
-3. Save the live canister ID to a command line variable:
-```
-LIVE_CANISTER_KEY="principal \"$( \dfx canister --network ic id token )\""
-```
+Bharat Token is not listed on any Exchange, so currently you cannot exchange is for some other currency. I want to try to list it.
 
-4. Check that it worked:
-```
-echo $LIVE_CANISTER_KEY
-```
+I don’t know the process yet but I will learn in the future and list it.
 
-5. Transfer some tokens to the live canister:
-```
-dfx canister --network ic call token transfer "($LIVE_CANISTER_KEY, 50_000_000)"
-```
+```cpp
 
-6. Get live canister front-end id:
+APIs:
+
+public shared(msg) transfer(To: Principal, Amount: Nat) : async Text
+
+public query balanceOf(user: Principal) : async Nat
+
+public shared(msg) payOut() : aysnc Text
+
+DataStructure:
+
+Balances are Stored in stable HashMap: Which persists across updates.
+Map< Principal, Nat> 
+
+Owner(Which is Me) has a principal id where the initial amount is stored.
 ```
-dfx canister --network ic id token_assets
-```
-7. Copy the id from step 6 and add .raw.ic0.app to the end to form a URL.
-e.g. zdv65-7qaaa-aaaai-qibdq-cai.raw.ic0.app
